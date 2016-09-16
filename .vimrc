@@ -31,15 +31,6 @@ set softtabstop=2
 set shiftwidth=2
 " set paste
 
-
-" Theme
-" syntax enable
-" set t_Co=256
-" colorscheme OceanicNext
-" set background=dark
-
-" colorscheme ego.vim
-
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
 vmap <Leader>y :w! ~/.vbuf<CR>
