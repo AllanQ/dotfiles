@@ -21,6 +21,7 @@ set fileencoding=utf-8
 set encoding=utf-8
 set number
 set cc=80
+highlight ColorColumn ctermbg=8
 set list
 set autowrite
 set hlsearch
@@ -33,6 +34,8 @@ set softtabstop=2
 set shiftwidth=2
 set ts=2 sts=2 sw=2
 set backspace=indent,eol,start
+set cursorline
+set noswapfile
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
