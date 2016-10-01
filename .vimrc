@@ -17,19 +17,22 @@ let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 let mapleader=","
 scriptencoding utf-8
+set fileencoding=utf-8
 set encoding=utf-8
 set number
 set cc=80
+set list
 set autowrite
 set hlsearch
 set ignorecase
 set smartcase
+set autoindent
 set expandtab
-set list
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-" set paste
+set ts=2 sts=2 sw=2
+set backspace=indent,eol,start
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
