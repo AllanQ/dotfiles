@@ -36,6 +36,7 @@ set ts=2 sts=2 sw=2
 set backspace=indent,eol,start
 set cursorline
 set noswapfile
+map <Leader>b obinding.pry<C-[>
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
