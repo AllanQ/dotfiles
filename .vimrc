@@ -34,7 +34,6 @@ set softtabstop=2
 set shiftwidth=2
 set ts=2 sts=2 sw=2
 set backspace=indent,eol,start
-set cursorline
 set noswapfile
 map <Leader>b oKernel.binding.pry<C-[>
 
