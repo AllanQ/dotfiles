@@ -1,6 +1,0 @@
-Style/FrozenStringLiteralComment:
-    Enabled: false
-Style/GuardClause:
-    Enabled: false
-Documentation:
-    Enabled: false
