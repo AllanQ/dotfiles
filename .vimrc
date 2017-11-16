@@ -50,7 +50,8 @@ set shiftwidth=2
 set ts=2 sts=2 sw=2
 set backspace=indent,eol,start
 set noswapfile
-map <Leader>b orequire 'pry'; Kernel.binding.pry<C-[>
+map <Leader>r orequire 'pry'; Kernel.binding.pry<C-[>
+map <Leader>u orequire 'byebug'; byebug<C-[>
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
