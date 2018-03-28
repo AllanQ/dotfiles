@@ -1,36 +1,30 @@
-"================Pathogen===================
-execute pathogen#infect()
-syntax enable
-filetype plugin indent on
-"================Syntastic==================
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint', 'flow']
-let g:syntastic_haml_checkers = ['haml_lint']
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-"================Ctrlp======================
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-"================Ag=========================
-" let g:ackprg = 'ag --nogroup --nocolor --column'
-" let g:ackprg = 'ag --vimgrep'
-"if executable('ag')
-"    let g:ackprg = 'ag --vimgrep'
-"endif
-let g:ackprg = 'ag --vimgrep --smart-case'
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
-"================vim-slim===================
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-"===========================================
-let mapleader=","
+" Plugins, vim-plug
+call plug#begin('~/.vim/bundle')
+  Plug 'scrooloose/nerdtree'
+  Plug 'jeetsukumaran/vim-buffergator'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-obsession'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'jgdavey/vim-blockle'
+  Plug 'pangloss/vim-javascript'
+  Plug 'slim-template/vim-slim'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'morhetz/gruvbox'
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
+
+" Leader
+let mapleader = ","
+
 scriptencoding utf-8
 set fileencoding=utf-8
 set encoding=utf-8
@@ -38,20 +32,37 @@ set number
 set cc=80
 highlight ColorColumn ctermbg=8
 set list
-set autowrite
 set hlsearch
 set ignorecase
 set smartcase
 set autoindent
-set expandtab
+set backspace=indent,eol,start
+"set backspace=2   " Backspace deletes like most programs in insert mode
+
+" Softtabs, 2 spaces
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set ts=2 sts=2 sw=2
-set backspace=indent,eol,start
-set noswapfile
+set shiftround
+set expandtab
+
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+set hls
+
 map <Leader>u orequire 'pry'; Kernel.binding.pry<C-[>
 map <Leader>r orequire 'byebug'; byebug<C-[>
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
 
 " Allow to copy/paste between VIM instances
 " "copy the current visual selection to ~/.vbuf
@@ -67,3 +78,18 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 nnoremap <silent> <bs> <C-w><Left>
+
+"================vim-slim===================
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+"================Syntastic==================
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint', 'flow']
+let g:syntastic_haml_checkers = ['haml_lint']
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
