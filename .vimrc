@@ -27,9 +27,10 @@ let mapleader = ","
 
 scriptencoding utf-8
 set fileencoding=utf-8
+set termencoding=utf-8
 set encoding=utf-8
 set number
-set cc=80
+set cc=100
 highlight ColorColumn ctermbg=8
 set list
 set hlsearch
@@ -58,8 +59,8 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set hls
 
-map <Leader>u orequire 'pry'; Kernel.binding.pry<C-[>
-map <Leader>r orequire 'byebug'; byebug<C-[>
+map <Leader>u orequire 'pp'; require 'pry'; Kernel.binding.pry<C-[>
+map <Leader>r orequire 'pp'; require 'byebug'; byebug<C-[>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -71,6 +72,9 @@ vmap <Leader>y :w! ~/.vbuf<CR>
 nmap <Leader>y :.w! ~/.vbuf<CR>
 " "paste the contents of the buffer file
 nmap <Leader>p :r ~/.vbuf<CR>
+"fzf
+nmap <Leader>f :FZF<ENTER>
+nmap <Leader>a :Ag<Space>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
