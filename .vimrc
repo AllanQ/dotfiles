@@ -1,4 +1,5 @@
 " Plugins, vim-plug
+" :PlugInstall
 call plug#begin('~/.vim/bundle')
   Plug 'scrooloose/nerdtree'
   Plug 'jeetsukumaran/vim-buffergator'
@@ -11,12 +12,16 @@ call plug#begin('~/.vim/bundle')
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-obsession'
+  Plug 'tpope/vim-rails'
+  Plug 'jlcrochet/vim-ruby'
   Plug 'airblade/vim-gitgutter'
   Plug 'jgdavey/vim-blockle'
   Plug 'pangloss/vim-javascript'
   Plug 'slim-template/vim-slim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'morhetz/gruvbox'
+  Plug 'neovimhaskell/haskell-vim'
+  Plug 'rainerborene/vim-reek'
 call plug#end()
 
 colorscheme gruvbox
@@ -60,7 +65,7 @@ set autowrite     " Automatically :write before running commands
 set hls
 
 map <Leader>u orequire 'pp'; require 'pry'; Kernel.binding.pry<C-[>
-map <Leader>r orequire 'pp'; require 'byebug'; byebug<C-[>
+map <Leader>r orequire 'pp'; require 'debug'; Kernel.binding.break<C-[>
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -97,3 +102,16 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint', 'flow']
 let g:syntastic_haml_checkers = ['haml_lint']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+
+"======================haskell-vim==================
+syntax on
+filetype plugin indent on
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
