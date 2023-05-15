@@ -5,6 +5,7 @@ call plug#begin('~/.vim/bundle')
   Plug 'jeetsukumaran/vim-buffergator'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'mileszs/ack.vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
@@ -79,7 +80,7 @@ nmap <Leader>y :.w! ~/.vbuf<CR>
 nmap <Leader>p :r ~/.vbuf<CR>
 "fzf
 nmap <Leader>f :FZF<ENTER>
-nmap <Leader>a :Ag<Space>
+nmap <Leader>a :Ack<Space>
 
 " Map ctrl-movement keys to window switching
 map <C-k> <C-w><Up>
