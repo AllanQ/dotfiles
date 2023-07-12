@@ -1,3 +1,6 @@
+set shell=/bin/zsh
+
+" https://github.com/junegunn/vim-plug
 " Plugins, vim-plug
 " :PlugInstall
 call plug#begin('~/.vim/bundle')
